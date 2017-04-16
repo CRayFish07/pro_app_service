@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd">
+    
+    <!-- university -->
+    <bean id="univAction" class="com.jeff.action.UnivAction" scope="prototype">
+    	<property name="univService" ref="univService"></property>
+    	<property name="rankService" ref="rankService"></property>
+    </bean>
+    
+    <bean id="univService" class="com.jeff.serviceImpl.UnivServiceImpl">
+    	<property name="univDao" ref="univDao"></property>
+    </bean>
+    
+    <bean id="univDao" class="com.jeff.daoImpl.UnivDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+    <!-- major -->
+    <bean id="majorAction" class="com.jeff.action.MajorAction" scope="prototype">
+    	<property name="majorService" ref="majorService"></property>
+    	<property name="rankService" ref="rankService"></property>
+    </bean>
+    
+    <bean id="majorService" class="com.jeff.serviceImpl.MajorServiceImpl">
+    	<property name="majorDao" ref="majorDao"></property>
+    </bean>
+    
+    <bean id="majorDao" class="com.jeff.daoImpl.MajorDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+    <!-- user -->
+    <bean id="userAction" class="com.jeff.action.UserAction" scope="prototype">
+    	<property name="userService" ref="userService"></property>
+    </bean>
+    
+    <bean id="userService" class="com.jeff.serviceImpl.UserServiceImpl">
+    	<property name="userDao" ref="userDao"></property>
+    </bean>
+    
+    <bean id="userDao" class="com.jeff.daoImpl.UserDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+    <!-- rank -->
+    <bean id="rankAction" class="com.jeff.action.RankAction" scope="prototype">
+    	<property name="rankService" ref="rankService"></property>
+    </bean>
+    
+    <bean id="rankService" class="com.jeff.serviceImpl.RankServiceImpl">
+    	<property name="rankDao" ref="rankDao"></property>
+    </bean>
+    
+    <bean id="rankDao" class="com.jeff.daoImpl.RankDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+    <!-- scoreline -->
+    <bean id="scoreLineAction" class="com.jeff.action.ScoreLineAction" scope="prototype">
+    	<property name="scoreLineService" ref="scoreLineService"></property>
+    </bean>
+    
+    <bean id="scoreLineService" class="com.jeff.serviceImpl.ScoreLineServiceImpl">
+    	<property name="scoreLineDao" ref="scoreLineDao"></property>
+    </bean>
+    
+    <bean id="scoreLineDao" class="com.jeff.daoImpl.ScoreLineDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+    <!-- news -->
+    <bean id="newsAction" class="com.jeff.action.NewsAction" scope="prototype">
+    	<property name="newsService" ref="newsService"></property>
+    </bean>
+    <bean id="newsService" class="com.jeff.serviceImpl.NewsServiceImpl">
+    	<property name="newsDao" ref="newsDao"></property>
+    </bean>
+    <bean id="newsDao" class="com.jeff.daoImpl.NewsDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+   
+	<!-- public -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/pro"></property>
+		<property name="user" value="root"></property>
+		<property name="password" value="123456"></property>
+	</bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource">
+		</property>
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean>
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<tx:advice id="advice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save" propagation="REQUIRED"/>
+			<tx:method name="update" propagation="REQUIRED"/>
+			<tx:method name="delete" propagation="REQUIRED"/>
+			<tx:method name="*" propagation="SUPPORTS"/>
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+        <aop:pointcut id="pointcut" expression="execution(* com.jeff.service.*.*(..))"/>
+		<aop:advisor advice-ref="advice" pointcut-ref="pointcut"/>
+	</aop:config>
+</beans>

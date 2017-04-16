@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table-filter match-name="major" match-catalog="pro"></table-filter>
+	<table-filter match-name="dis" match-catalog="pro"></table-filter>
+	<table-filter match-name="spec" match-catalog="pro"></table-filter>
+	<table-filter match-name="univ" match-catalog="pro"></table-filter>
+	<table-filter match-name="puser" match-catalog="pro"></table-filter>
+	<table-filter match-name="rank12" match-catalog="pro"></table-filter>
+	<table-filter match-name="college_score_line" match-catalog="pro"></table-filter>
+	<table-filter match-name="bridge" match-catalog="pro"></table-filter>
+	<table-filter match-name="news" match-catalog="pro"></table-filter>
+	<table-filter match-name="qs2017" match-catalog="pro"></table-filter>
+	<table-filter match-name="jiaodapaiming" match-catalog="pro"></table-filter>
+	<table-filter match-name="wushulian2017" match-catalog="pro"></table-filter>
+	<table-filter match-name="xyhpaiming" match-catalog="pro"></table-filter>
+</hibernate-reverse-engineering>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>开设院校</title>
+<script type="text/javascript">
+	$("#queryAllUniv").click(function() {
+		var majorCode = $("#majorCode").text();
+		var province = $("#provin option:selected").val();
+		$.getJSON("http://127.0.0.1:8080/pro/major_queryAllUnivByMajor?major.majorCode=" + majorCode + "&page=1" + "&province=" + province, function(data) {
+			$("#tablediv").load("pages/subkaisheyuanxiao.html",function(){
+				$("#subunivTotalCount").val(data.total);
+			});	
+		});
+	});
+
+	//点击开设院校分页按钮以后触发的动作
+	function ksyxPaginationClick(new_page_index, pagination_container) {
+		$("#kaisheTable tbody").empty();
+		var majorCode = $("#majorCode").text();
+		$.getJSON(
+				"http://127.0.0.1:8080/pro/major_queryAllUnivByMajor?major.majorCode="
+						+ majorCode + "&page=" + (new_page_index + 1),
+				function(data) {
+					$.each(data.rows, function(i, item) {
+						var row = $("<tr></tr>");
+						var td_1 = $("<td><a href='#'>" + item.univName
+								+ "</a></td>");
+						var td_2 = $("<td><a href='#'>" + item.univLevel
+								+ "</a></td>");
+						var td_3 = $("<td><a href='#'>" + item.univType
+								+ "</a></td>");
+						var td_4 = $("<td><a href='#'>" + item.univProvince
+								+ "</a></td>");
+						row.append(td_1);
+						row.append(td_2);
+						row.append(td_3);
+						row.append(td_4);
+						$("#kaisheTable tbody").append(row);
+					});
+				});
+		return false;
+	};
+
+	$(function() {
+		var univTotalCount = $("#univTotalCount").val();
+		$("#kaishePagination").pagination(univTotalCount, {
+			items_per_page : 5,
+			num_display_entries : 1,
+			next_text : "下一页",
+			prev_text : "上一页",
+			num_edge_entries : 1, // 连接分页主体，显示的条目数
+			callback : ksyxPaginationClick
+		});
+	});
+</script>
+</head>
+<body>
+		<div class="col-md-3 column">
+			<select id="provin" class="form-control">
+				<option value="北京" selected="selected">北京</option>
+				<option value="天津">天津</option>
+				<option value="河北">河北</option>
+				<option value="山西">山西</option>
+				<option value="内蒙古">内蒙古</option>
+				<option value="辽宁">辽宁</option>
+				<option value="吉林">吉林</option>
+				<option value="黑龙江">黑龙江</option>
+				<option value="上海">上海</option>
+				<option value="江苏">江苏</option>
+				<option value="浙江">浙江</option>
+				<option value="安徽">安徽</option>
+				<option value="福建">福建</option>
+				<option value="江西">江西</option>
+				<option value="山东">山东</option>
+				<option value="河南">河南</option>
+				<option value="湖北">湖北</option>
+				<option value="湖南">湖南</option>
+				<option value="广东">广东</option>
+				<option value="广西">广西</option>
+				<option value="海南">海南</option>
+				<option value="四川">四川</option>
+				<option value="重庆">重庆</option>
+				<option value="贵州">贵州</option>
+				<option value="云南">云南</option>
+				<option value="西藏">西藏</option>
+				<option value="陕西">陕西</option>
+				<option value="甘肃">甘肃</option>
+				<option value="青海">青海</option>
+				<option value="宁夏">宁夏</option>
+				<option value="新疆">新疆</option>
+				<option value="武汉">武汉</option>
+			</select>
+		</div>
+		<input type="button" id="queryAllUniv" class="btn btn-primary" value="查询">
+		<div id="tablediv">
+			<table id="kaisheTable" class="table table-striped">
+				<thead>
+					<tr>
+						<th>高校名称</th>
+						<th>院校级别</th>
+						<th>院校类型</th>
+						<th>所在地区</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<div id="kaishePagination"></div>
+		</div>
+		<input id="subunivTotalCount"  type="hidden" />
+</body>
+</html>

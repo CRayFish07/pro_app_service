@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-25 10:43:49 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.jeff.model.Univ" table="univ" catalog="pro" optimistic-lock="version">
+        <id name="univCode" type="string">
+            <column name="univ_code" />
+            <generator class="assigned" />
+        </id>
+        <property name="univName" type="string">
+            <column name="univ_name" not-null="true" />
+        </property>
+        <property name="univCtime" type="string">
+            <column name="univ_ctime" />
+        </property>
+        <property name="univ211" type="string">
+            <column name="univ_211" length="1" />
+        </property>
+        <property name="univ985" type="string">
+            <column name="univ_985" length="1" />
+        </property>
+        <property name="univProvince" type="string">
+            <column name="univ_province" />
+        </property>
+        <property name="univSubjection" type="string">
+            <column name="univ_subjection">
+                <comment>&#212;&#186;&#208;&#163;&#193;&#165;&#202;&#244;</comment>
+            </column>
+        </property>
+        <property name="univType" type="string">
+            <column name="univ_type" />
+        </property>
+        <property name="univHost" type="string">
+            <column name="univ_host" />
+        </property>
+        <property name="univLevel" type="string">
+            <column name="univ_level" />
+        </property>
+        <property name="univPhone" type="string">
+            <column name="univ_phone" />
+        </property>
+        <property name="univWebsite" type="string">
+            <column name="univ_website" />
+        </property>
+        <property name="univAddress" type="string">
+            <column name="univ_address" />
+        </property>
+        <property name="univNas" type="string">
+            <column name="univ_nas" />
+        </property>
+        <property name="univPhds" type="string">
+            <column name="univ_phds" />
+        </property>
+        <property name="univMasters" type="string">
+            <column name="univ_masters" />
+        </property>
+        <property name="univIntro" type="string">
+            <column name="univ_intro" />
+        </property>
+        <property name="univFaculty" type="string">
+            <column name="univ_faculty" />
+        </property>
+        <property name="univAward" type="string">
+            <column name="univ_award" />
+        </property>
+        <property name="univStudent" type="string">
+            <column name="univ_student" />
+        </property>
+        <property name="univSchoolmate" type="string">
+            <column name="univ_schoolmate" />
+        </property>
+        <property name="univSpecialty" type="string">
+            <column name="univ_specialty" />
+        </property>
+        <property name="univXyhrank" type="string">
+            <column name="univ_xyhrank" />
+        </property>
+        <property name="univWslrank" type="string">
+            <column name="univ_wslrank" />
+        </property>
+    </class>
+</hibernate-mapping>

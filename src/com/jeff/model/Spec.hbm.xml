@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-25 10:43:49 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.jeff.model.Spec" table="spec" catalog="pro" optimistic-lock="version">
+        <id name="specCode" type="string">
+            <column name="spec_code" />
+            <generator class="assigned" />
+        </id>
+        <property name="disCode" type="string">
+            <column name="dis_code">
+                <comment>&#209;&#167;&#191;&#198;&#195;&#197;&#192;&#224;&#180;&#250;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="specName" type="string">
+            <column name="spec_name">
+                <comment>&#215;&#168;&#210;&#181;&#192;&#224;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="specIntro" type="string">
+            <column name="spec_intro" />
+        </property>
+    </class>
+</hibernate-mapping>

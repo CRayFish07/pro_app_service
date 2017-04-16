@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="default" extends="json-default">
+		<action name="univAction_*" class="univAction" method="{1}">
+			<result name="college">/pages/college.jsp</result>	
+			<result name="specMap" type="json">
+				<param name="root">specMap</param>
+			</result>
+			<result name="majorMap" type="json">
+				<param name="root">majorMap</param>
+			</result>
+			<result name="xueyuanMap" type="json">
+				<param name="root">xueyuanMap</param>
+			</result>
+			<result name="allUnivMap" type="json">
+				<param name="root">allUnivMap</param>
+			</result>
+			
+		</action>
+		
+		<action name="major_*" class="majorAction" method="{1}">
+			<result name="major">/pages/major.jsp</result>
+			<result name="allUnivMap" type="json">
+				<param name="root">allUnivMap</param>
+			</result>
+			<result name="allDisMap" type="json">
+				<param name="root">allDisMap</param>
+			</result>
+			<result name="allSpecMap" type="json">
+				<param name="root">allSpecMap</param>
+			</result>
+			<result name="allMajorMap" type="json">
+				<param name="root">allMajorMap</param>
+			</result>
+		</action>
+		
+		<!-- 用户相关 -->
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="registPageSuccess">/pages/regist.jsp</result>
+			<result name="registSuccess">/pages/index.jsp</result>
+			<result name="registFailed">/pages/regist.jsp</result>
+			<result name="loginSuccess">/pages/college.jsp</result>
+			<result name="loginFailed">/pages/index.jsp</result>
+		</action>
+		
+		<!-- 排名相关 -->
+		<action name="rank_*" class="rankAction" method="{1}">
+			<result name="rankUnivMap" type="json">
+				<param name="root">rankUnivMap</param>
+			</result>
+			<result name="rankSpecMap" type="json">
+				<param name="root">rankSpecMap</param>
+			</result>
+			<result name="rankRankMap" type="json">
+				<param name="root">rankRankMap</param>
+			</result>
+			<result name="rankXYHMap" type="json">
+				<param name="root">rankXYHMap</param>
+			</result>
+			<result name="rankWSLMap" type="json">
+				<param name="root">rankWSLMap</param>
+			</result>
+			<result name="rankJDMap" type="json">
+				<param name="root">rankJDMap</param>
+			</result>
+			<result name="rankQSMap" type="json">
+				<param name="root">rankQSMap</param>
+			</result>
+		</action>
+		
+		<!-- 分数线相关 -->
+		<action name="score_*" class="scoreLineAction" method="{1}">
+			<result name="scoreLineMap" type="json">
+				<param name="root">scoreLineMap</param>
+			</result>
+		</action>
+		
+		<!-- 新闻资讯相关 -->
+		<action name="news_*" class="newsAction" method="{1}">
+			<result name="newsMap" type="json">
+				<param name="root">newsMap</param>
+			</result>
+		</action>
+	</package>
+</struts>    

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-25 10:43:49 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.jeff.model.CollegeScoreLine" table="college_score_line" catalog="pro" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="univCode" type="string">
+            <column name="univ_code" />
+        </property>
+        <property name="univName" type="string">
+            <column name="univ_name">
+                <comment>&#212;&#186;&#208;&#163;&#180;&#250;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="province" type="string">
+            <column name="province">
+                <comment>&#191;&#188;&#201;&#250;&#203;&#249;&#212;&#218;&#181;&#216;</comment>
+            </column>
+        </property>
+        <property name="artsScience" type="string">
+            <column name="arts_science">
+                <comment>&#191;&#188;&#201;&#250;&#192;&#224;&#177;&#240;</comment>
+            </column>
+        </property>
+        <property name="year" type="string">
+            <column name="year">
+                <comment>&#197;&#250;&#180;&#206;</comment>
+            </column>
+        </property>
+        <property name="batch" type="string">
+            <column name="batch" />
+        </property>
+        <property name="averageScore" type="string">
+            <column name="average_score">
+                <comment>&#215;&#238;&#184;&#223;&#183;&#214;</comment>
+            </column>
+        </property>
+        <property name="highestScore" type="string">
+            <column name="highest_score">
+                <comment>&#198;&#189;&#190;&#249;&#183;&#214;</comment>
+            </column>
+        </property>
+        <property name="lowestScore" type="string">
+            <column name="lowest_score" />
+        </property>
+        <property name="num" type="java.lang.Integer">
+            <column name="num" />
+        </property>
+        <property name="fencha" type="string">
+            <column name="fencha" />
+        </property>
+        <property name="provinceScore" type="string">
+            <column name="province_score" />
+        </property>
+    </class>
+</hibernate-mapping>

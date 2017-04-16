@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>开设专业</title>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var univCode = $("#univCode").text();
+		$("#zhuanye").html("");
+		$.getJSON("http://127.0.0.1:8080/pro/univAction_queryXueYuanById?university.univCode=" + univCode, function(data) {
+			$.each(data.rows,function(i,item){
+				$("#zhuanye").append("<div id='"+item.xueyuan+"'><span class='label'><a href='javascript:void(0)' onclick=myclick('"+item.xueyuan+"')>"+item.xueyuan+"</a></span></div><br>");
+			});
+		});
+	});
+	function myclick(str){
+		var univCode = $("#univCode").text();
+		$.getJSON("http://127.0.0.1:8080/pro/univAction_queryMajorOfXueYuan?university.univCode="+univCode+"&bridge.xueyuan="+str, function(data) {
+			$.each(data.rows,function(i,item){
+				var link = "http://127.0.0.1:8080/pro/major_queryMajorById?major.majorCode="+item.majorCode;
+				$.getJSON("http://127.0.0.1:8080/pro/rank_queryRankByUnivCodeAndMajorCode?university.univCode="+univCode+"&majorCode="+item.majorCode, function(data2) {
+					if(data2.rows){
+						alert(data2);
+						$.each(data2.rows,function(i,item2){
+							$("#"+str).append("<div><a target='_blank' href="+link+">"+item.majorName+"</a><p>"+item2.univRank+"</p></div>");
+						});
+					}else{
+						$("#"+str).append("<div><a target='_blank' href="+link+">"+item.majorName+"</a></div>");
+					}
+				});
+			});
+		});
+	}
+</script>
+</head>
+<body>
+		<div id="zhuanye" class="col-md-12 column">
+			
+		</div>
+</body>
+</html>

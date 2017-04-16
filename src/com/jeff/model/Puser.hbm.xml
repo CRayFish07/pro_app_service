@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-25 10:43:49 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.jeff.model.Puser" table="puser" catalog="pro" optimistic-lock="version">
+        <id name="uid" type="int">
+            <column name="uid" />
+            <generator class="assigned" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" />
+        </property>
+        <property name="addr" type="string">
+            <column name="addr" />
+        </property>
+        <property name="sex" type="string">
+            <column name="sex" />
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="state" />
+        </property>
+        <property name="code" type="string">
+            <column name="code" />
+        </property>
+    </class>
+</hibernate-mapping>

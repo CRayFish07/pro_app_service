@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>开设院校子页面</title>
+<script type="text/javascript">
+//点击子开设院校分页按钮以后触发的动作
+function subksyxPaginationClick(new_page_index, pagination_container) {
+	$("#subkaisheTable tbody").empty();
+	var majorCode = $("#majorCode").text();
+	var province = $("#provin option:selected").val();
+	$.getJSON(
+			"http://127.0.0.1:8080/pro/major_queryAllUnivByMajor?major.majorCode="
+					+ majorCode + "&page=" + (new_page_index + 1) + "&province=" + province,
+			function(data) {
+				$.each(data.rows, function(i, item) {
+					var row = $("<tr></tr>");
+					var td_1 = $("<td><a href='#'>" + item.univName
+							+ "</a></td>");
+					var td_2 = $("<td><a href='#'>" + item.univLevel
+							+ "</a></td>");
+					var td_3 = $("<td><a href='#'>" + item.univType
+							+ "</a></td>");
+					var td_4 = $("<td><a href='#'>" + item.univProvince
+							+ "</a></td>");
+					row.append(td_1);
+					row.append(td_2);
+					row.append(td_3);
+					row.append(td_4);
+					$("#subkaisheTable tbody").append(row);
+				});
+			});
+	return false;
+};
+
+$(function() {
+	var total = $("#subunivTotalCount").val();
+	$("#subkaishePagination").pagination(Number(total), {
+		items_per_page : 5,
+		num_display_entries : 1,
+		next_text : "下一页",
+		prev_text : "上一页",
+		num_edge_entries : 1, // 连接分页主体，显示的条目数
+		load_first_page:true,
+		callback : subksyxPaginationClick
+	});
+});
+</script>
+</head>
+<body>
+	<table id="subkaisheTable" class="table table-striped">
+				<thead>
+					<tr>
+						<th>高校名称</th>
+						<th>院校级别</th>
+						<th>院校类型</th>
+						<th>所在地区</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<div id="subkaishePagination"></div>
+</body>
+</html>

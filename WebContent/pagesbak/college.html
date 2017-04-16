@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>高校库</title>
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<style>
+ .place{
+	overflow: hidden;
+ }
+ .myul2 li{
+	list-style: none;
+	float: left;
+    height: 23px;
+    margin-left: 2px;
+    padding-top: 2px;
+ }
+ .myul2 a{
+	display: block;
+    width: 50px;
+    height: 20px;
+    text-align: center;
+    line-height: 23px;
+    background: #f8f8f8;
+    color: #0073BE;
+	-webkit-border-radius: 2px;
+	text-decoration: none;
+    outline: 0;
+ }
+ .colist{
+	margin-top:20px;
+ }
+</style>
+
+</head>
+
+<body>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">登录</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+					  <input type="hidden" value="index_nav" name="source">
+						 <div class="col-md-3">
+							
+						 </div>
+						 <div class="col-md-6">
+							<form class="form-horizontal" role="form">
+							  <div class="form-group">
+								<label for="userName" class="col-sm-3 control-label">帐 号</label>
+								<div class="col-sm-8">
+								  <input type="text" class="form-control" id="userName" placeholder="name">
+								</div>
+							  </div>
+							  <div class="form-group">
+								<label for="userPassword" class="col-sm-3 control-label">密 码</label>
+								<div class="col-sm-8">
+								  <input type="password" class="form-control" id="userPassword" placeholder="Password">
+								</div>
+							  </div>
+							  <div class="form-group">
+								<div class="col-sm-2">
+								  <button type="submit" class="btn btn-default">登录</button>
+								</div>
+							  </div>
+							</form>
+							<!--
+							<div class="item item-account">
+								<input type="text" name="form_email" id="form_email" value="" class="inp" placeholder="邮箱 / 手机号" tabindex="1">
+							</div>
+							<div class="item item-passwd">
+								<input name="form_password" placeholder="密码" id="form_password" class="inp" type="password" tabindex="2">						
+								<a href="#">帮助</a>						
+							</div>
+							-->
+						 </div>
+						 <div class="col-md-3">
+							
+						 </div>				 
+					</div>
+				</div>						
+				<div class="modal-footer">			    
+					<!-- 转接注册modal -->
+				</div>			
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div><!-- /.modal -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-3 logo">
+				<img src="../img/logo.png" class="img-responsive" alt="Responsive image">
+			</div>
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-3 feature">
+			
+				<div class="jsd">	
+				
+				<a data-toggle="modal" href="#myModal">登录
+				
+				</a>&nbsp;|&nbsp;
+				<a href="" target="_blank">注册
+				</a>
+				</div>			    
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-default">
+						<span class="glyphicon glyphicon-search"></span> 搜索
+					</button>
+				</form>
+			</div>
+			<div class="col-md-2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-8">
+				<nav class="navbar navbar-default">
+
+				  <div class="container-fluid">
+				  
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+					  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					  </button>
+					  <a class="navbar-brand" href="#">
+						Brand
+					  </a>
+					</div>
+					
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					  <ul class="nav navbar-nav">
+						<li><a href="../index.html">首页</a></li>
+						<li class="active"><a href="college.html">高校库</a></li>
+						<li><a href="#">专业库</a></li>
+						<li><a href="news.html">高校资讯</a></li>
+						<li><a href="#">学科排名</a></li>
+					  </ul>	  
+					</div>
+				  </div>
+				</nav>
+			</div>
+			<div class="col-md-2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-8">
+				<ul class="breadcrumb">
+					<li>
+						 <a href="#">首页</a>
+					</li>
+					<li>
+						 <a href="#">高校库</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="place">
+							<ul class="myul2">
+								<li><a href="http://www.gaokao.com/beijing/bjxw/" target="_blank" title="北京"><span>北京</span></a></li>
+								<li><a href="http://www.gaokao.com/shanghai/shxw/" target="_blank" title="上海"><span>上海</span></a></li>
+								<li><a href="http://www.gaokao.com/tianjin/tjxw/" target="_blank" title="天津"><span>天津</span></a></li>
+								<li><a href="http://www.gaokao.com/guangdong/gdxw/" target="_blank" title="广东"><span>广东</span></a></li>
+								<li><a href="http://www.gaokao.com/shandong/sdxw/" target="_blank" title="山东"><span>山东</span></a></li>
+								<li><a href="http://www.gaokao.com/jiangsu/jsxw/" target="_blank" title="江苏"><span>江苏</span></a></li>
+								<li><a href="http://www.gaokao.com/zhejiang/zjxw/" target="_blank" title="浙江"><span>浙江</span></a></li>
+								<li><a href="http://www.gaokao.com/hubei/hbxw/" target="_blank" title="湖北"><span>湖北</span></a></li>
+								<li><a href="http://www.gaokao.com/hunan/hnxw/" target="_blank" title="湖南"><span>湖南</span></a></li>
+								<li><a href="http://www.gaokao.com/shanxi/sxxw/" target="_blank" title="陕西"><span>陕西</span></a></li>
+								<li><a href="http://www.gaokao.com/sx/sxxw/" target="_blank" title="山西"><span>山西</span></a></li>
+								<li><a href="http://www.gaokao.com/sichuan/scxw/" target="_blank" title="四川"><span>四川</span></a></li>
+								<li><a href="http://www.gaokao.com/fujian/fjxw/" target="_blank" title="福建"><span>福建</span></a></li>
+								<li><a href="http://www.gaokao.com/anhui/ahxw/" target="_blank" title="安徽"><span>安徽</span></a></li>
+								<li><a href="http://www.gaokao.com/liaoning/lnxw/" target="_blank" title="辽宁"><span>辽宁</span></a></li>
+								<li><a href="http://www.gaokao.com/jiangxi/jxxw/" target="_blank" title="江西"><span>江西</span></a></li>
+								<li><a href="http://www.gaokao.com/hainan/hnxw/" target="_blank" title="海南"><span>海南</span></a></li>
+								<li><a href="http://www.gaokao.com/ningxia/nxxw/" target="_blank" title="宁夏"><span>宁夏</span></a></li>
+								<li><a href="http://www.gaokao.com/jilin/jlxw/" target="_blank" title="吉林"><span>吉林</span></a></li>
+								<li><a href="http://www.gaokao.com/yunnan/ynxw/" target="_blank" title="云南"><span>云南</span></a></li>
+								<li><a href="http://www.gaokao.com/guangxi/gxxw/" target="_blank" title="广西"><span>广西</span></a></li>
+								<li><a href="http://www.gaokao.com/guizhou/gzxw/" target="_blank" title="贵州"><span>贵州</span></a></li>
+								<li><a href="http://www.gaokao.com/qinghai/qhxw/" target="_blank" title="青海"><span>青海</span></a></li>
+								<li><a href="http://www.gaokao.com/gansu/gsxw/" target="_blank" title="甘肃"><span>甘肃</span></a></li>
+								<li><a href="http://www.gaokao.com/hebei/hbxw/" target="_blank" title="河北"><span>河北</span></a></li>
+								<li><a href="http://www.gaokao.com/henan/hnxw/" target="_blank" title="河南"><span>河南</span></a></li>
+								<li><a href="http://www.gaokao.com/chongqing/cqxw/" target="_blank" title="重庆"><span>重庆</span></a></li>
+								<li><a href="http://www.gaokao.com/xinjiang/xjxw/" target="_blank" title="新疆"><span>新疆</span></a></li>
+								<li><a href="http://www.gaokao.com/xizang/xzxw/" target="_blank" title="西藏"><span>西藏</span></a></li>
+								<li><a href="http://www.gaokao.com/heilongjiang/hljxw/" target="_blank" title="黑龙江"><span>黑龙江</span></a></li>
+							</ul>
+						</div>
+						<hr>
+						<div class="colist">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>
+											院校名称
+										</th>
+										<th>
+											所在地
+										</th>
+										<th>
+											院校隶属
+										</th>
+										<th>
+											院校类型
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<a href="college_detail.html">北京大学</a>
+										</td>
+										<td>
+											北京
+										</td>
+										<td>
+											教育部
+										</td>
+										<td>
+											综合
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#">北京大学</a>
+										</td>
+										<td>
+											北京
+										</td>
+										<td>
+											教育部
+										</td>
+										<td>
+											综合
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="#">北京大学</a>
+										</td>
+										<td>
+											北京
+										</td>
+										<td>
+											教育部
+										</td>
+										<td>
+											综合
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<ul class="pagination">
+							<li>
+								 <a href="#">Prev</a>
+							</li>
+							<li>
+								 <a href="#">1</a>
+							</li>
+							<li>
+								 <a href="#">2</a>
+							</li>
+							<li>
+								 <a href="#">3</a>
+							</li>
+							<li>
+								 <a href="#">4</a>
+							</li>
+							<li>
+								 <a href="#">5</a>
+							</li>
+							<li>
+								 <a href="#">Next</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+					</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 mycol">
+			</div>
+		</div>
+	</div>
+
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
+</html>

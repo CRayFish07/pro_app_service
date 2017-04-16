@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-3-25 10:43:49 by Hibernate Tools 4.3.5.Final -->
+<hibernate-mapping>
+    <class name="com.jeff.model.Major" table="major" catalog="pro" optimistic-lock="version">
+        <id name="majorCode" type="string">
+            <column name="major_code" />
+            <generator class="assigned" />
+        </id>
+        <property name="majorName" type="string">
+            <column name="major_name" />
+        </property>
+        <property name="specCode" type="string">
+            <column name="spec_code" />
+        </property>
+        <property name="majorDegree" type="string">
+            <column name="major_degree" />
+        </property>
+        <property name="majorLength" type="string">
+            <column name="major_length" />
+        </property>
+        <property name="mainDiscipline" type="string">
+            <column name="main_discipline" />
+        </property>
+        <property name="mainCourse" type="string">
+            <column name="main_course" />
+        </property>
+        <property name="majorGoal" type="string">
+            <column name="major_goal" length="65535" />
+        </property>
+        <property name="majorRequire" type="string">
+            <column name="major_require" length="65535" />
+        </property>
+        <property name="stuAbility" type="string">
+            <column name="stu_ability" length="65535" />
+        </property>
+        <property name="majorPractice" type="string">
+            <column name="major_practice" length="65535" />
+        </property>
+        <property name="bookRecommender" type="string">
+            <column name="book_recommender" />
+        </property>
+        <property name="majorPayment" type="string">
+            <column name="major_payment" />
+        </property>
+        <property name="majorEmploy" type="string">
+            <column name="major_employ" />
+        </property>
+        <property name="majorToward" type="string">
+            <column name="major_toward" />
+        </property>
+        <property name="masterInfo" type="string">
+            <column name="master_info" />
+        </property>
+        <property name="abroadInfo" type="string">
+            <column name="abroad_info" />
+        </property>
+        <property name="majorIntro" type="string">
+            <column name="major_intro" />
+        </property>
+    </class>
+</hibernate-mapping>
